@@ -126,7 +126,6 @@ namespace Adventure
                 Console.WriteLine("Congratulation you got a " + items[1]);
                 inventory.Add(items[1]);
                 Chest();
-                Console.WriteLine("Test for git");
             }
         }
 
