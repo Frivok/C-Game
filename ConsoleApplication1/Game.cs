@@ -127,7 +127,6 @@ namespace Adventure
                 inventory.Add(items[1]);
                 Chest();
             }
-            
         }
 
         static void Fight()
