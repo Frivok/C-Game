@@ -10,6 +10,8 @@ namespace Adventure
         public static int atk = 2;
         public static int weaponValue = 0;
         public static int armor = 0;
+        public static int potions = 5;
+        public static int potionValue = 4;
         public static int gold = 0;
         
         // create new random class called randomNumber

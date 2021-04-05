@@ -11,7 +11,7 @@ namespace Adventure
         
         public static void Main()
         {
-            // invoke the start method from hero class
+            // invoke the start method from game class
             Game.Start();
             Console.Read();
         }

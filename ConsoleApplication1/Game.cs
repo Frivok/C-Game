@@ -40,10 +40,12 @@ namespace Adventure
                                                                                                
                                                                                                
 ";
-            Console.Title = title;
+            // change the color to red and write the string title above
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(title);
+            // reset the color
             Console.ResetColor();
+            
             Console.WriteLine("Press enter to start the game");
             Console.ReadKey();
             Console.Clear();
@@ -83,6 +85,7 @@ namespace Adventure
             Console.WriteLine(message);
             Console.ResetColor();
         }
+        
 
         static void Chest()
         {
@@ -139,8 +142,11 @@ namespace Adventure
             {
                     Console.WriteLine("==========================================");
                     Console.WriteLine("|Hp: " + Character.hp +                 "|");
+                    Console.WriteLine("|Potions: " + Character.potions);
                     Console.WriteLine("|Enemy Hp: " + Monster.monsterHp +      "|");
                     Console.WriteLine("|Press A to attack                       |");
+                    Console.WriteLine("|Press D to defend                      |");
+                    Console.WriteLine("|Press P to use a potion                   |");
                     Console.WriteLine("==========================================");
                     
                     string input = Console.ReadLine();
@@ -148,10 +154,35 @@ namespace Adventure
                     
                     if (input == "A")
                     {
+                        // attack
                         Console.WriteLine("you lose " + Monster.monsterAtk + " hp and deal " + Character.atk + " damage");
                         Monster.monsterHp -= characterAttack; 
                         Character.hp -= monsterDamage;
                     }
+
+                    if (input == "D")
+                    {
+                        // defend 
+                        Console.WriteLine("you defended against the enemy and you lose " + Monster.monsterAtk /2 + " hp");
+                        Character.hp -= monsterDamage / 2;
+                    }
+
+                    if (input == "P")
+                    {
+                        // heal
+                        if (Character.potions > 0)
+                        {
+                            Console.WriteLine("You used a potion and gain " + Character.potionValue + " hp");
+                            Character.hp += Character.potionValue;
+                        }
+
+                        else
+                        {
+                            
+                        }
+                    }
+                    
+                    
                     
                     if (Monster.monsterHp <= 0)
                     {

@@ -5,6 +5,7 @@ namespace Adventure
 {
     public class Monster
     {
+        // monster stats
         public static int monsterHp = 10;
         public static int monsterAtk = 1;
         
